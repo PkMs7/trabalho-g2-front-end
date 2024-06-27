@@ -1,13 +1,13 @@
-import { useState } from 'react'
+import { Header } from './components/Header'
+import { CardPrevisao } from './components/CardPrevisao'
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
-      <div>
-        <h1>Site de Previsão do Tempo</h1>
-      </div>
+      <Header />
+      <CardPrevisao />
     </>
   )
 }
