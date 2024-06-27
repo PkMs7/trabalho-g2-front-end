@@ -23,20 +23,18 @@ export function CardPrevisao() {
 
     return (
 
-        <main className="container">
-            <div className="jumbotron">
-                <h1>
+        <main className="card text-bg-light mb-3">
+            <div className="card-body">
+                <h2>
                     Verifique agora a previsão do tempo em sua cidade!
-                </h1>
-                <p className="lead">
-                    Digite o nome de sua cidade:
-                </p>
+                </h2>
 
                 <div className="row mb-4">
                     <div className="col-md-6">
                         <input className="form-control"
                             onChange={handleChange}
                             type="text"
+                            placeholder="Digite o nome da cidade"
                             value={cidade} />
                     </div>
                 </div>
@@ -47,13 +45,16 @@ export function CardPrevisao() {
 
                 {previsaoDoTempo ? (
                     <div>
-                        <div className="mt-4">
+                        <div>
                             <div>
                                 <img src={previsaoDoTempo.current.condition.icon} />
                             </div>
                             <div>
                                 <h3>Tempo {previsaoDoTempo.current.condition.text}</h3>
-                                <p>Temperatura: {previsaoDoTempo.current.temp_c} Cº</p>
+                                <h5>{previsaoDoTempo.location.name}</h5>
+                                <h5>{previsaoDoTempo.location.region}</h5>
+                                <h5>{previsaoDoTempo.location.country}</h5>
+                                <p><b>Temperatura:</b> {previsaoDoTempo.current.temp_c} Cº</p>
                             </div>
                         </div>
                     </div>
